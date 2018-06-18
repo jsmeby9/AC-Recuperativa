@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import random
 """
 # Parte 2
 
@@ -12,16 +13,11 @@ data= [b'_/\xef\xb9\x8b\\_ \n(\xd2\x82`_\xc2\xb4)\n<,\xef\xb8\xbb\xe2\x95\xa6\xe
 
 """Intentamos decodificar la información"""
 
-def modulo(numero):
-  """
-  Completar para que retorne número módulo 4 y no siempre 1
-  """
-  return 1
+def enumerar(string):
+  return "{} - {}".format(0, string)
 
-nombre = input("Ingresa tu nombre de usuario: ")
 
 with open("output_2.txt", "w", encoding="UTF-8") as file:
-  file.write(data[modulo(hash(nombre))].decode("UTF-8"))
+  file.write(enumerar(data[random.randint(0,3)].decode("UTF-8")))
 
-"""el output lo guardo en un txt en vez de imprimirlo y eso suben en su repo"""
-
+print('Esto fue creado un día')
