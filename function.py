@@ -14,10 +14,11 @@ data= [b'_/\xef\xb9\x8b\\_ \n(\xd2\x82`_\xc2\xb4)\n<,\xef\xb8\xbb\xe2\x95\xa6\xe
 """Intentamos decodificar la información"""
 
 def enumerar(string):
-  return "{} - {}".format(0, string)
+  return "{} - {}\n".format(0, string)
 
 
 with open("output_2.txt", "w", encoding="UTF-8") as file:
-  file.write(enumerar(data[random.randint(0,3)].decode("UTF-8")))
+  for elem in data[random.randint(0,3)].decode("UTF-8").split("\n"):
+    file.write(enumerar(elem))
 
 print('Esto fue creado un día')
